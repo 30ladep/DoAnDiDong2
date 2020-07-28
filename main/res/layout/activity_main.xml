@@ -6,17 +6,16 @@
     android:layout_height="match_parent"
     android:background="#673AB7"
     android:orientation="vertical"
-    tools:context=".GiaoDien.MainActivity">
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="390dp"
-        android:layout_height="256dp"
+        android:layout_width="421dp"
+        android:layout_height="314dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/vaii" />
+        app:srcCompat="@drawable/ka6" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -38,12 +37,21 @@
 
             <Button
                 android:id="@+id/btnLoaiVai"
-                style="@style/btn_main"
-                android:text="@string/loai_vai" />
+                style="@style/button"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_style_black_24dp"
+                android:text="@string/loai_vai"
+                android:textSize="14sp" />
 
             <Button
                 android:id="@+id/btnKho"
-                style="@style/btn_main"
+                style="@style/button"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_home_black_24dp"
                 android:text="@string/thong_tin_kho" />
         </LinearLayout>
 
@@ -54,13 +62,21 @@
 
             <Button
                 android:id="@+id/btnPhieunhap"
-                style="@style/btn_main"
+                style="@style/button"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_bubble_chart_black_24dp"
                 android:text="@string/phieu_nhap" />
 
             <Button
-                android:id="@+id/button15"
-                style="@style/btn_main"
-                android:text="@string/phieu_xuat"/>
+                android:id="@+id/btn_phieuxuat"
+                style="@style/button"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_call_missed_outgoing_black_24dp"
+                android:text="@string/phieu_xuat" />
         </LinearLayout>
     </LinearLayout>
 
@@ -78,8 +94,7 @@
         <Button
             android:id="@+id/button16"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/selectong"
+            android:layout_height="70dp"
             android:text="@string/tong_kho" />
     </LinearLayout>
 

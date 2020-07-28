@@ -1,4 +1,4 @@
-package com.example.doan_vai_ver1.GiaoDien;
+package com.example.doan_vai_ver1;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -16,13 +16,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.doan_vai_ver1.R;
+import com.example.doan_vai_ver1.View.KhoActivity;
+import com.example.doan_vai_ver1.View.LoaiVaiActivity;
+import com.example.doan_vai_ver1.View.NhapActivity;
+import com.example.doan_vai_ver1.View.XuatActivity;
 
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn_kho, btn_loaivai, btn_Phieunhap;
+    Button btn_kho, btn_loaivai, btn_Phieunhap, btn_Phieuxuat;
     private Menu menu;
     /*
     * Create pref and lang to save previous version
@@ -71,6 +74,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, NhapActivity.class));
             }
         });
+        btn_Phieuxuat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, XuatActivity.class));
+            }
+        });
     }
 
     private void setControl() {
@@ -78,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
         btn_kho = findViewById(R.id.btnKho);
         btn_loaivai = findViewById(R.id.btnLoaiVai);
         btn_Phieunhap = findViewById(R.id.btnPhieunhap);
+        btn_Phieuxuat = findViewById(R.id.btn_phieuxuat);
     }
 
     @Override

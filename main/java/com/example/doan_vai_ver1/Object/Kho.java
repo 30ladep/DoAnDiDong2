@@ -1,4 +1,4 @@
-package com.example.doan_vai_ver1.SanPham;
+package com.example.doan_vai_ver1.Object;
 
 public class Kho {
 

@@ -16,7 +16,7 @@
     <string name="Makho">Mã kho</string>
     <string name="TenKho">tên kho</string>
     <string name="diachi">Địa chỉ</string>
-    <string name="error_null">Trường dữ liệu không được để trống!</string>
+    <string name="error_null">Nhập lại!</string>
     <string name="mavai">Mã vải</string>
     <string name="tenvai">Tên vải</string>
     <string name="xuatxu">Xuất xứ</string>

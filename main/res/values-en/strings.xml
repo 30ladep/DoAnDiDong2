@@ -3,7 +3,7 @@
     <string name="app_name">Warehouse management</string>
     <string name="tieude">Warehouse management</string>
     <string name="add">ADD</string>
-    <string name="del">DELETE</string>
+    <string name="del">DELATE</string>
     <string name="change">CHANGE</string>
     <string name="loai_vai">Stype</string>
     <string name="tong_kho">Depot</string>
@@ -11,13 +11,13 @@
     <string name="phieu_nhap">import coupon</string>
     <string name="phieu_xuat">delivery notes</string>
     <string name="lang">English</string>
-    <string name="mess_exit">Do you want to exit ?</string>
+    <string name="mess_exit">Do you want to exit ???</string>
     <string name="yes">YES</string>
     <string name="no">NO</string>
     <string name="Makho">Depot ID</string>
     <string name="TenKho">Depot name</string>
     <string name="diachi">Address</string>
-    <string name="error_null">Data may not be blank</string>
+    <string name="error_null">Retype</string>
     <string name="mavai">code type of fabric</string>
     <string name="tenvai">Name of fabric</string>
     <string name="xuatxu">Source</string>

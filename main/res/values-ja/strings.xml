@@ -11,13 +11,13 @@
     <string name="tong_kho">デポ</string>
     <string name="loai_vai">種</string>
     <string name="lang">日本</string>
-    <string name="mess_exit">終了しますか?</string>
+    <string name="mess_exit">終了しますか???</string>
     <string name="yes">持ってる</string>
     <string name="no">ほしくない</string>
     <string name="Makho">デポコード</string>
     <string name="TenKho">デポ名</string>
     <string name="diachi">住所</string>
-    <string name="error_null">データは空白にできません!</string>
+    <string name="error_null">再入力 !</string>
     <string name="mavai">生地のコードタイプ</string>
     <string name="tenvai">生地の名前</string>
     <string name="xuatxu">原点</string>

@@ -6,25 +6,34 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:orientation="vertical"
-    tools:context=".GiaoDien.KhoActivity">
+    tools:context=".View.KhoActivity">
 
     <EditText
         android:id="@+id/txt_kho_ms"
-        style="@style/editstyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:ems="10"
         android:hint="@string/Makho"
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/txt_kho_Ten"
-        style="@style/editstyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:ems="10"
         android:hint="@string/TenKho"
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/txt_kho_diachi"
-        style="@style/editstyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:ems="10"
         android:hint="@string/diachi"
         android:inputType="textPersonName" />
@@ -36,24 +45,34 @@
 
         <Button
             android:id="@+id/btn_kho_them"
-            style="@style/btnkho"
+            style="@style/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/add" />
 
         <Button
             android:id="@+id/btn_kho_sua"
-            style="@style/btnkho"
+            style="@style/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:enabled="false"
             android:text="@string/change" />
 
         <Button
             android:id="@+id/btn_kho_xoa"
-            style="@style/btnkho"
+            style="@style/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:enabled="false"
             android:text="@string/del" />
     </LinearLayout>
 
     <ListView
         android:id="@+id/kho_listview"
-       style="@style/list" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

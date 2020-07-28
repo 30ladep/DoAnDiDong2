@@ -37,13 +37,17 @@
 
                 <TextView
                     android:id="@+id/textView2"
-                  style="@style/txtphieunhap"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:gravity="center|right|center_horizontal"
                     android:text="@string/ngay" />
 
                 <TextView
                     android:id="@+id/txt_phieunhap_ngay"
-                    style="@style/txtphieunhap"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:gravity="left"
                     android:text="TextView" />
             </LinearLayout>
@@ -55,13 +59,17 @@
 
                 <TextView
                     android:id="@+id/textView4"
-                    style="@style/txtphieunhap"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:gravity="right"
                     android:text="@string/loai_vai" />
 
                 <TextView
                     android:id="@+id/txt_phieunhap_loaivai"
-                    style="@style/txtphieunhap"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:gravity="left"
                     android:text="TextView" />
             </LinearLayout>
@@ -73,13 +81,17 @@
 
                 <TextView
                     android:id="@+id/textView6"
-                    style="@style/txtphieunhap"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:gravity="right"
                     android:text="@string/Makho" />
 
                 <TextView
                     android:id="@+id/txt_phieunhap_makho"
-                    style="@style/txtphieunhap"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:gravity="left"
                     android:text="TextView" />
             </LinearLayout>
@@ -91,16 +103,23 @@
 
                 <TextView
                     android:id="@+id/textView8"
-                    style="@style/txtphieunhap"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:gravity="right"
                     android:text="@string/soluong" />
 
                 <TextView
                     android:id="@+id/txt_phieunhap_soluong"
-                    style="@style/txtphieunhap"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:gravity="left"
                     android:text="TextView" />
             </LinearLayout>
+
+
+
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -5,24 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".View.NhapActivity">
+    tools:context=".View.XuatActivity">
 
-    <LinearLayout
+    <Button
+        android:id="@+id/btn_xuat_them"
+        style="@style/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/btn_nhap_them"
-            style="@style/button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/add" />
-    </LinearLayout>
+        android:text="@string/add" />
 
     <ListView
-        android:id="@+id/nhap_listview"
+        android:id="@+id/xuat_listview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp" />
+        android:layout_height="match_parent" />
 </LinearLayout>
