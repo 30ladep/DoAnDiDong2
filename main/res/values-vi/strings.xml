@@ -26,4 +26,6 @@
     <string name="soluong">Số lượng:</string>
     <string name="qlnk">Quản lý nhập kho</string>
     <string name="chitiet">Chi tiết</string>
+    <string name="xuat_kho">Xuất kho</string>
+    <string name="nhap_kho">Nhập kho</string>
 </resources>

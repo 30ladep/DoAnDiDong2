@@ -1,6 +1,16 @@
 package com.example.doan_vai_ver1.Object;
 
 public class Vai {
+    int stt;
+
+    public int getStt() {
+        return stt;
+    }
+
+    public void setStt(int stt) {
+        this.stt = stt;
+    }
+
     String vai_ms;
     String vai_ten;
     String vai_xuatxu;
@@ -29,7 +39,8 @@ public class Vai {
         this.vai_xuatxu = vai_xuatxu;
     }
 
-    public Vai(String vai_ms, String vai_ten, String vai_xuatxu) {
+    public Vai(int stt, String vai_ms, String vai_ten, String vai_xuatxu) {
+        this.stt = stt;
         this.vai_ms = vai_ms;
         this.vai_ten = vai_ten;
         this.vai_xuatxu = vai_xuatxu;

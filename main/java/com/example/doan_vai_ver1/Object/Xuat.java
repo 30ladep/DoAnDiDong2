@@ -3,7 +3,8 @@ package com.example.doan_vai_ver1.Object;
 public class Xuat {
     String ngay;
     String loaivai;
-    String kho;
+    int soluong;
+    int stt;
 
     public String getNgay() {
         return ngay;
@@ -21,32 +22,29 @@ public class Xuat {
         this.loaivai = loaivai;
     }
 
-    public String getKho() {
-        return kho;
-    }
-
-    public void setKho(String kho) {
-        this.kho = kho;
-    }
-
-    public String getSoluong() {
+    public int getSoluong() {
         return soluong;
     }
 
-    public void setSoluong(String soluong) {
+    public void setSoluong(int soluong) {
         this.soluong = soluong;
     }
 
-    public Xuat(String ngay, String loaivai, String kho, String soluong) {
-        this.ngay = ngay;
-        this.loaivai = loaivai;
-        this.kho = kho;
-        this.soluong = soluong;
+    public int getStt() {
+        return stt;
+    }
+
+    public void setStt(int stt) {
+        this.stt = stt;
     }
 
     public Xuat() {
     }
 
-    String soluong;
-
+    public Xuat(String ngay, String loaivai, int soluong, int stt) {
+        this.ngay = ngay;
+        this.loaivai = loaivai;
+        this.soluong = soluong;
+        this.stt = stt;
+    }
 }

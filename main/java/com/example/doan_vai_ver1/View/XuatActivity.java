@@ -10,24 +10,28 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.doan_vai_ver1.Customize.PhieuXuatCustom;
+import com.example.doan_vai_ver1.Object.Vai;
 import com.example.doan_vai_ver1.Object.Xuat;
 import com.example.doan_vai_ver1.R;
+import com.example.doan_vai_ver1.db.LoaiVaiManager;
+import com.example.doan_vai_ver1.db.XuatManager;
 
 import java.util.ArrayList;
 
 public class XuatActivity extends AppCompatActivity {
-    ListView listView;
+    ListView lv;
     Button btnXuat;
     ArrayList<Xuat> data = new ArrayList<>();
     PhieuXuatCustom adapter;
-    int index = -1;
-
+    XuatManager xuatmanager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,22 +53,12 @@ public class XuatActivity extends AppCompatActivity {
         actionBar.setTitle(getResources().getString(R.string.phieu_xuat));
 
         khoitao();
-        adapter = new PhieuXuatCustom(this, R.layout.xuat_customize, data);
-        listView.setAdapter(adapter);
-
-        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                /*
-                 * Vì trong customize ta duyệt list từ dưới lên
-                 * nên khi gán index ta đảo ngược lại
-                 *
-                 * */
-                index = data.size() - position - 1;
-                String str = getResources().getString(R.string.ngay) + ": " + data.get(index).getNgay() + "\n "
-                        + getResources().getString(R.string.loai_vai) + ": " + data.get(index).getLoaivai() + "\n "
-                        + getResources().getString(R.string.kho) + ": " + data.get(index).getKho() + "\n "
-                        + getResources().getString(R.string.soluong) + ": " + data.get(index).getSoluong() + "m2";
+                String str = getResources().getString(R.string.ngay) + ": " + data.get(position).getNgay() + "\n "
+                        + getResources().getString(R.string.loai_vai) + ": " + data.get(position).getLoaivai() + "\n "
+                        + getResources().getString(R.string.soluong) + ": " + data.get(position).getSoluong() + "m2";
                 AlertDialog.Builder builder = new AlertDialog.Builder(XuatActivity.this);
                 builder.setTitle(getResources().getString(R.string.chitiet));
                 builder.setMessage(str);
@@ -82,7 +76,7 @@ public class XuatActivity extends AppCompatActivity {
     }
 
     private void setControl() {
-        listView = findViewById(R.id.xuat_listview);
+        lv = findViewById(R.id.xuat_listview);
         btnXuat = findViewById(R.id.btn_xuat_them);
     }
 
@@ -93,14 +87,10 @@ public class XuatActivity extends AppCompatActivity {
     }
 
     public void khoitao() {
-        data.add(new Xuat("12/2/2020", "VT02", "TD", "150"));
-        data.add(new Xuat("12/2/2020", "VT02", "TD", "150"));
-        data.add(new Xuat("12/2/2020", "VT02", "TD", "150"));
-        data.add(new Xuat("12/2/2020", "VT02", "TD", "150"));
-        data.add(new Xuat("12/2/2020", "VT02", "TD", "150"));
-        data.add(new Xuat("12/2/2020", "VT02", "TD", "150"));
-        data.add(new Xuat("12/2/2020", "VT02", "TD", "150"));
-        data.add(new Xuat("12/2/2020", "VT02", "TD", "150"));
+        xuatmanager = new XuatManager(getApplicationContext());
+        data = xuatmanager.LayDL();
+        adapter = new PhieuXuatCustom(this, R.layout.xuat_customize, data);
+        lv.setAdapter(adapter);
     }
 
     public void ShowDialogNhap() {
@@ -110,11 +100,20 @@ public class XuatActivity extends AppCompatActivity {
 
         //ánh xạ
         final EditText ngay = dialog.findViewById(R.id.txt_xuat_ngay);
-        final EditText loaivai = dialog.findViewById(R.id.txt_xuat_loaivai);
-        final EditText makho = dialog.findViewById(R.id.txt_xuat_kho);
+        final Spinner sp_loaivai = dialog.findViewById(R.id.spinner_xuat);
         final EditText soluong = dialog.findViewById(R.id.txt_xuat_soluong);
         Button btnThem = dialog.findViewById(R.id.btn_dialogxuat_them);
         Button btnKhong = dialog.findViewById(R.id.btn_dialogxuat_khong);
+
+        final LoaiVaiManager loaivaimanager = new LoaiVaiManager(getApplicationContext());
+        ArrayList<Vai> listvai = loaivaimanager.LayDL();
+        ArrayList<String> arr_sp = new ArrayList<>();
+        for (int i = 0; i < listvai.size(); i++){
+            arr_sp.add(listvai.get(i).getVai_ten());
+        }// co list data spinner
+        ArrayAdapter<String> sp_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, arr_sp);
+        sp_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp_loaivai.setAdapter(sp_adapter);
 
         btnThem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,27 +122,20 @@ public class XuatActivity extends AppCompatActivity {
                     ngay.setError(getResources().getString(R.string.error_null));
                     return;
                 }
-                if (loaivai.getText().toString().equals("")) {
-                    loaivai.setError(getResources().getString(R.string.error_null));
-                    return;
-                }
-                if (makho.getText().toString().equals("")) {
-                    makho.setError(getResources().getString(R.string.error_null));
-                    return;
-                }
                 if (soluong.getText().toString().equals("")) {
                     soluong.setError(getResources().getString(R.string.error_null));
                     return;
                 }
                 Xuat xuat = new Xuat();
-                xuat.setNgay(ngay.getText().toString());
-                xuat.setLoaivai(loaivai.getText().toString());
-                xuat.setKho(makho.getText().toString());
-                xuat.setSoluong(soluong.getText().toString());
-                data.add(xuat);
-                adapter.notifyDataSetChanged();
-                dialog.dismiss();
-                Toast.makeText(XuatActivity.this, "sucessfully", Toast.LENGTH_SHORT).show();
+                xuat.setNgay(ngay.getText().toString().trim());
+                xuat.setLoaivai(loaivaimanager.getMA(sp_loaivai.getSelectedItem().toString()));
+                xuat.setSoluong( Integer.parseInt(soluong.getText().toString().trim()));
+                int check = xuatmanager.Themsp(xuat);
+                if(check == 0){
+                    khoitao();
+                    dialog.dismiss();
+                    Toast.makeText(XuatActivity.this, "sucessfully", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         btnKhong.setOnClickListener(new View.OnClickListener() {

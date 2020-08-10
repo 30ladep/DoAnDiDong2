@@ -5,17 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".View.XuatActivity">
-
-    <Button
-        android:id="@+id/btn_xuat_them"
-        style="@style/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/xuat_kho" />
+    tools:context=".View.TongKhoActivity">
 
     <ListView
-        android:id="@+id/xuat_listview"
+        android:id="@+id/tongkholv"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

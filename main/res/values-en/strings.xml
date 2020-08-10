@@ -26,4 +26,6 @@
     <string name="soluong">how many:</string>
     <string name="qlnk">Manage Depot input</string>
     <string name="chitiet">Detail</string>
+    <string name="xuat_kho">out of stock</string>
+    <string name="nhap_kho">in of stock</string>
 </resources>

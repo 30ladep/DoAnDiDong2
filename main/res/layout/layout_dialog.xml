@@ -15,23 +15,19 @@
         android:inputType="textPersonName"
         android:textSize="14sp" />
 
-    <EditText
-        android:id="@+id/txt_nhap_loaivai"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/loai_vai"
-        android:inputType="textPersonName"
-        android:textSize="14sp" />
+<!--    <EditText-->
+<!--        android:id="@+id/txt_nhap_loaivai"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:ems="10"-->
+<!--        android:hint="@string/loai_vai"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:textSize="14sp" />-->
 
-    <EditText
-        android:id="@+id/txt_nhap_makho"
+    <Spinner
+        android:id="@+id/spinner_nhap"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/Makho"
-        android:inputType="textPersonName"
-        android:textSize="14sp" />
+        android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/txt_nhap_soluong"
@@ -39,7 +35,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/soluong"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:textSize="14sp" />
 
     <LinearLayout

@@ -16,16 +16,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.doan_vai_ver1.View.KhoActivity;
 import com.example.doan_vai_ver1.View.LoaiVaiActivity;
 import com.example.doan_vai_ver1.View.NhapActivity;
+import com.example.doan_vai_ver1.View.TongKhoActivity;
 import com.example.doan_vai_ver1.View.XuatActivity;
 
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn_kho, btn_loaivai, btn_Phieunhap, btn_Phieuxuat;
+    Button btn_loaivai, btn_Phieunhap, btn_Phieuxuat, btn_Tongkho;
     private Menu menu;
     /*
     * Create pref and lang to save previous version
@@ -56,12 +56,9 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(getResources().getString(R.string.app_name));
 
-        btn_kho.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, KhoActivity.class));
-            }
-        });
+        //khoitaoDATA();
+
+
         btn_loaivai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,14 +77,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, XuatActivity.class));
             }
         });
+        btn_Tongkho.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, TongKhoActivity.class));
+            }
+        });
+    }
+
+    private void khoitaoDATA() {
+
     }
 
     private void setControl() {
 
-        btn_kho = findViewById(R.id.btnKho);
         btn_loaivai = findViewById(R.id.btnLoaiVai);
         btn_Phieunhap = findViewById(R.id.btnPhieunhap);
         btn_Phieuxuat = findViewById(R.id.btn_phieuxuat);
+        btn_Tongkho = findViewById(R.id.btnTongKho);
     }
 
     @Override

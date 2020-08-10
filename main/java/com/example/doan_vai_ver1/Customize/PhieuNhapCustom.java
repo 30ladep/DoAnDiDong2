@@ -33,25 +33,33 @@ public class PhieuNhapCustom extends ArrayAdapter {
         return data.size();
     }
 
+    private static class ViewHolder{
+        TextView stt;
+        TextView ngay;
+        TextView ma;
+        TextView soluong;
+    }
+
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-
-        View view = LayoutInflater.from(context).inflate(resource, null);
-
-        TextView edt1 = view.findViewById(R.id.txt_phieunhap_stt);
-        TextView edt2 = view.findViewById(R.id.txt_phieunhap_ngay);
-        TextView edt3 = view.findViewById(R.id.txt_phieunhap_loaivai);
-        TextView edt4 = view.findViewById(R.id.txt_phieunhap_makho);
-        TextView edt5 = view.findViewById(R.id.txt_phieunhap_soluong);
-
-        Nhap nhap = data.get(getCount() - position - 1);
-        edt1.setText(getCount() - position + "");
-        edt2.setText(nhap.getNgay());
-        edt3.setText(nhap.getMavai());
-        edt4.setText(nhap.getTenkho());
-        edt5.setText(nhap.getSoluong() + "m2");
-
-        return view;
+        ViewHolder holder = null;
+        if (convertView == null){
+            convertView = LayoutInflater.from(context).inflate(resource, null);
+            holder = new ViewHolder();
+            holder.stt = convertView.findViewById(R.id.txt_phieunhap_stt);
+            holder.ngay = convertView.findViewById(R.id.txt_phieunhap_ngay);
+            holder.ma = convertView.findViewById(R.id.txt_phieunhap_loaivai);
+            holder.soluong = convertView.findViewById(R.id.txt_phieunhap_soluong);
+            convertView.setTag(holder);
+        }else{
+            holder = (ViewHolder) convertView.getTag();
+        }
+        final Nhap nhap = data.get(position);
+        holder.stt.setText(nhap.getStt()+"");
+        holder.ngay.setText(nhap.getNgay());
+        holder.ma.setText(nhap.getMavai());
+        holder.soluong.setText(nhap.getSoluong()+"");
+        return convertView;
     }
 }

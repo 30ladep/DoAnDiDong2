@@ -11,31 +11,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/ngay"
         android:inputType="textPersonName"
         android:textSize="14sp" />
 
-    <EditText
-        android:id="@+id/txt_xuat_loaivai"
+    <Spinner
+        android:id="@+id/spinner_xuat"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="14sp" />
-
-    <EditText
-        android:id="@+id/txt_xuat_kho"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="14sp" />
+        android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/txt_xuat_soluong"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:hint="@string/soluong"
+        android:inputType="number"
         android:textSize="14sp" />
 
     <LinearLayout

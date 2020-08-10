@@ -1,10 +1,25 @@
 package com.example.doan_vai_ver1.Object;
 
 public class Nhap {
+    int stt;
     String ngay;
     String mavai;
-    String tenkho;
-    String soluong;
+    int soluong;
+
+    public Nhap(int stt, String ngay, String mavai, int soluong) {
+        this.stt = stt;
+        this.ngay = ngay;
+        this.mavai = mavai;
+        this.soluong = soluong;
+    }
+
+    public int getStt() {
+        return stt;
+    }
+
+    public void setStt(int stt) {
+        this.stt = stt;
+    }
 
     public String getNgay() {
         return ngay;
@@ -22,26 +37,11 @@ public class Nhap {
         this.mavai = mavai;
     }
 
-    public String getTenkho() {
-        return tenkho;
-    }
-
-    public void setTenkho(String tenkho) {
-        this.tenkho = tenkho;
-    }
-
-    public String getSoluong() {
+    public int getSoluong() {
         return soluong;
     }
 
-    public void setSoluong(String soluong) {
-        this.soluong = soluong;
-    }
-
-    public Nhap(String ngay, String mavai, String tenkho, String soluong) {
-        this.ngay = ngay;
-        this.mavai = mavai;
-        this.tenkho = tenkho;
+    public void setSoluong(int soluong) {
         this.soluong = soluong;
     }
 

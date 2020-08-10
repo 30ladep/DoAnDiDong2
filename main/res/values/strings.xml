@@ -25,4 +25,12 @@
     <string name="soluong">Số lượng:</string>
     <string name="qlnk">Quản lý nhập kho</string>
     <string name="chitiet">Chi tiết</string>
+
+    <string name="sun">Sun</string>
+    <string name="grass">Grass</string>
+    <string name="sky">Sky</string>
+    <string name="clock">Clock</string>
+    <string name="hour">Hour Hand</string>
+    <string name="xuat_kho">Xuất Kho</string>
+    <string name="nhap_kho">Nhập kho</string>
 </resources>

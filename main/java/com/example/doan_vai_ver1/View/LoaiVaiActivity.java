@@ -10,20 +10,21 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-
+import android.widget.Toast;
 
 import com.example.doan_vai_ver1.Customize.VaiCustom;
-import com.example.doan_vai_ver1.Object.Kho;
 import com.example.doan_vai_ver1.Object.Vai;
 import com.example.doan_vai_ver1.R;
+import com.example.doan_vai_ver1.db.LoaiVaiManager;
 
 import java.util.ArrayList;
 
 public class LoaiVaiActivity extends AppCompatActivity {
 
+    LoaiVaiManager loaivaimanager;
     //-----------
     EditText edt1, edt2, edt3;
-    Button btnThem, btnSua, btnXoa;
+    Button btnThem, btnSua, btnXoa, btnReset;
     //******************************
     ListView lw;
     ArrayList<Vai> data = new ArrayList<>();
@@ -32,6 +33,8 @@ public class LoaiVaiActivity extends AppCompatActivity {
     /*
      * variable use to check position
      * */
+    ///Khai bao lop database
+   // DBHelper loaiHP;
     int check_position = -1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +56,7 @@ public class LoaiVaiActivity extends AppCompatActivity {
         actionBar.setTitle(getResources().getString(R.string.loai_vai));
 
         khoitao();
-        adapter = new VaiCustom(this, R.layout.loaivai_customize, data);
-        lw.setAdapter(adapter);
+
         btnThem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,13 +76,21 @@ public class LoaiVaiActivity extends AppCompatActivity {
                 vai.setVai_ms(edt1.getText().toString());
                 vai.setVai_ten(edt2.getText().toString());
                 vai.setVai_xuatxu(edt3.getText().toString());
-                data.add(vai);
-                adapter.notifyDataSetChanged();
+                int check = loaivaimanager.Themsp(vai);
+                if(check == 0){
+                    Toast.makeText(LoaiVaiActivity.this, "thanh cong", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(LoaiVaiActivity.this, "nonono", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                khoitao();
             }
         });
         lw.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                edt1.setEnabled(false);
                 if (position >= 0) {
                     btnSua.setEnabled(true);
                     btnXoa.setEnabled(true);
@@ -106,11 +116,13 @@ public class LoaiVaiActivity extends AppCompatActivity {
                     edt3.setError(getResources().getString(R.string.error_null));
                     return;
                 }
-                data.get(check_position).setVai_ms(edt1.getText().toString());
-                data.get(check_position).setVai_ten(edt2.getText().toString());
-                data.get(check_position).setVai_xuatxu(edt3.getText().toString());
-                adapter.notifyDataSetChanged();
-
+                Vai vai = new Vai();
+                vai.setStt(data.get(check_position).getStt());
+                vai.setVai_ms(edt1.getText().toString().trim());
+                vai.setVai_ten(edt2.getText().toString().trim());
+                vai.setVai_xuatxu(edt3.getText().toString().trim());
+                loaivaimanager.Sua(vai);
+                khoitao();
                 //-------------------------------
                 edt1.setText("");
                 edt2.setText("");
@@ -124,8 +136,16 @@ public class LoaiVaiActivity extends AppCompatActivity {
         btnXoa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                data.remove(check_position);
-                adapter.notifyDataSetChanged();
+                Vai vai = new Vai();
+                vai.setStt(data.get(check_position).getStt());
+                vai.setVai_ms(data.get(check_position).getVai_ms());
+                vai.setVai_ten(data.get(check_position).getVai_ten());
+                vai.setVai_xuatxu(data.get(check_position).getVai_xuatxu());
+                int check = loaivaimanager.DelProduct(vai.getVai_ms());
+                if (check == -1){
+                    Toast.makeText(getApplication(), "Khong xoa duoc!!", Toast.LENGTH_SHORT).show();
+                }
+                khoitao();
                 //-------------------------------
                 edt1.setText("");
                 edt2.setText("");
@@ -134,6 +154,17 @@ public class LoaiVaiActivity extends AppCompatActivity {
                 btnSua.setEnabled(false);
                 btnXoa.setEnabled(false);
                 check_position = -1;
+            }
+        });
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edt1.setEnabled(true);
+                edt1.setText("");
+                edt2.setText("");
+                edt3.setText("");
+                btnSua.setEnabled(false);
+                btnXoa.setEnabled(false);
             }
         });
     }
@@ -147,16 +178,13 @@ public class LoaiVaiActivity extends AppCompatActivity {
         btnThem = findViewById(R.id.btn_vai_them);
         btnSua = findViewById(R.id.btn_vai_sua);
         btnXoa = findViewById(R.id.btn_vai_xoa);
+        btnReset = findViewById(R.id.btn_vai_reset);
     }
     private void khoitao() {
-        data.add(new Vai("V1", "Nhung", "Q1"));
-        data.add(new Vai("V1", "Nhung", "Q1"));
-        data.add(new Vai("V1", "Nhung", "Q1"));
-        data.add(new Vai("V1", "Nhung", "Q1"));
-        data.add(new Vai("V1", "Nhung", "Q1"));
-        data.add(new Vai("V1", "Nhung", "Q1"));
-        data.add(new Vai("V1", "Nhung", "Q1"));
-
+        loaivaimanager = new LoaiVaiManager(getApplicationContext());
+        data = loaivaimanager.LayDL();
+        adapter = new VaiCustom(this, R.layout.loaivai_customize, data);
+        lw.setAdapter(adapter);
     }
     public boolean onOptionsItemSelected(MenuItem item) {
 

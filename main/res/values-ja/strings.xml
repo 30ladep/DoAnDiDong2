@@ -26,4 +26,6 @@
     <string name="soluong">幾つ</string>
     <string name="qlnk">倉庫管理</string>
     <string name="chitiet">細部</string>
+    <string name="xuat_kho">在庫切れ</string>
+    <string name="nhap_kho">在庫あり</string>
 </resources>

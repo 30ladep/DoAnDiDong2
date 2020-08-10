@@ -35,23 +35,33 @@ public class VaiCustom extends ArrayAdapter {
         return data.size();
     }
 
+    private static class ViewHolder{
+        TextView stt;
+        TextView ten;
+        TextView ma;
+        TextView xuatxu;
+    }
+
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View view = LayoutInflater.from(context).inflate(resource, null);
-        //-------
-        ImageView imageView = view.findViewById(R.id.vai_img);
-        TextView txt_stt = view.findViewById(R.id.vai_stt);
-        TextView txt_ms = view.findViewById(R.id.vai_ms);
-        TextView txt_ten = view.findViewById(R.id.vai_ten);
-        TextView txt_xuatxu = view.findViewById(R.id.vai_xuatxu);
-        //---------------------
-        Vai vai = data.get(getCount() - position - 1);
-        imageView.setImageResource(R.drawable.vai);
-        txt_stt.setText(getCount() - position + "");
-        txt_ms.setText(context.getResources().getString(R.string.mavai) + ": " + vai.getVai_ms());
-        txt_ten.setText(context.getResources().getString(R.string.tenvai) + ": " + vai.getVai_ten());
-        txt_xuatxu.setText(context.getResources().getString(R.string.xuatxu) + ": " + vai.getVai_xuatxu());
-        return view;
+        ViewHolder holder = null;
+        if (convertView == null){
+            convertView = LayoutInflater.from(context).inflate(resource, null);
+            holder = new ViewHolder();
+            holder.stt = convertView.findViewById(R.id.vai_stt);
+            holder.ma = convertView.findViewById(R.id.vai_ms);
+            holder.ten = convertView.findViewById(R.id.vai_ten);
+            holder.xuatxu = convertView.findViewById(R.id.vai_xuatxu);
+            convertView.setTag(holder);
+        }else{
+            holder = (ViewHolder) convertView.getTag();
+        }
+        final Vai vai = data.get(position);
+        holder.stt.setText(vai.getStt()+"");
+        holder.ma.setText(vai.getVai_ms());
+        holder.ten.setText(vai.getVai_ten());
+        holder.xuatxu.setText(vai.getVai_xuatxu());
+        return convertView;
     }
 }

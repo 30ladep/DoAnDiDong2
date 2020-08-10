@@ -17,7 +17,7 @@
             style="@style/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/add" />
+            android:text="@string/nhap_kho" />
     </LinearLayout>
 
     <ListView
