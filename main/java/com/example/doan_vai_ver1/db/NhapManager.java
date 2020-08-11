@@ -59,4 +59,20 @@ public class NhapManager {
         String sql = "delete from PHIEUNHAP where ID = " + nhap.getStt();
         db.execSQL(sql);
     }
+    public int slNhap(String str){
+        int sl = 0;
+        String sql = "select * from PHIEUNHAP where MA = '" + str + "'";
+        db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(sql, null);
+        cursor.moveToFirst();
+        if((cursor.getCount() > 0) && cursor != null){
+            do
+            {
+                sl += cursor.getInt(3);
+            }
+            while (cursor.moveToNext());
+        }
+
+        return sl;
+    }
 }

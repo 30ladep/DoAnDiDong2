@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.example.doan_vai_ver1.Object.Vai;
 import com.example.doan_vai_ver1.R;
+import com.example.doan_vai_ver1.db.NhapManager;
+import com.example.doan_vai_ver1.db.XuatManager;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -61,6 +63,14 @@ public class VaiCustom extends ArrayAdapter {
         holder.stt.setText(vai.getStt()+"");
         holder.ma.setText(vai.getVai_ms());
         holder.ten.setText(vai.getVai_ten());
+        NhapManager nhapmanager = new NhapManager(context);
+        XuatManager xuatmanager = new XuatManager(context);
+        int slnhap = nhapmanager.slNhap(vai.getVai_ms());
+        int slxuat = xuatmanager.slXuat(vai.getVai_ms());
+        if(slnhap - slxuat < 10) {
+            holder.ten.setTextColor(context.getResources().getColor(R.color.red));
+        }
+
         holder.xuatxu.setText(vai.getVai_xuatxu());
         return convertView;
     }

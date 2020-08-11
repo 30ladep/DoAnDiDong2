@@ -53,4 +53,20 @@ public class XuatManager {
         }
         return cursor.getCount(); // = 0 la them dc
     }
+    public int slXuat(String str){
+        int sl = 0;
+        String sql = "select * from PHIEUXUAT where MA = '" + str + "'";
+        db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(sql, null);
+        cursor.moveToFirst();
+        if((cursor.getCount() > 0) && cursor != null){
+            do
+            {
+                sl += cursor.getInt(3);
+            }
+            while (cursor.moveToNext());
+        }
+
+        return sl;
+    }
 }
