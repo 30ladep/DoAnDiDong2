@@ -11,13 +11,13 @@
     <string name="phieu_nhap">Phiếu nhập</string>
     <string name="phieu_xuat">Phiếu xuất</string>
     <string name="lang">Việt Nam</string>
-    <string name="mess_exit">Bạn có muốn thoát ?</string>
+    <string name="mess_exit">Bạn có muốn thoát ???</string>
     <string name="yes">Có</string>
     <string name="no">Không</string>
     <string name="Makho">Mã kho</string>
     <string name="TenKho">Tên kho</string>
     <string name="diachi">Địa chỉ</string>
-    <string name="error_null">Dữ liệu không được để trống!</string>
+    <string name="error_null">Nhập lại!</string>
     <string name="mavai">Mã loại vải</string>
     <string name="tenvai">Tên loại vải</string>
     <string name="xuatxu">Xuất xứ</string>
@@ -26,4 +26,6 @@
     <string name="soluong">Số lượng:</string>
     <string name="qlnk">Quản lý nhập kho</string>
     <string name="chitiet">Chi tiết</string>
+    <string name="xuat_kho">Xuất kho</string>
+    <string name="nhap_kho">Nhập kho</string>
 </resources>

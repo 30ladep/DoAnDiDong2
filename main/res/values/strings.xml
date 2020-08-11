@@ -16,7 +16,7 @@
     <string name="Makho">Mã kho</string>
     <string name="TenKho">tên kho</string>
     <string name="diachi">Địa chỉ</string>
-    <string name="error_null">Trường dữ liệu không được để trống!</string>
+    <string name="error_null">Nhập lại!</string>
     <string name="mavai">Mã vải</string>
     <string name="tenvai">Tên vải</string>
     <string name="xuatxu">Xuất xứ</string>
@@ -25,4 +25,12 @@
     <string name="soluong">Số lượng:</string>
     <string name="qlnk">Quản lý nhập kho</string>
     <string name="chitiet">Chi tiết</string>
+
+    <string name="sun">Sun</string>
+    <string name="grass">Grass</string>
+    <string name="sky">Sky</string>
+    <string name="clock">Clock</string>
+    <string name="hour">Hour Hand</string>
+    <string name="xuat_kho">Xuất Kho</string>
+    <string name="nhap_kho">Nhập kho</string>
 </resources>

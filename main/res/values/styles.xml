@@ -8,36 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="editstyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginLeft">20dp</item>
-        <item name="android:layout_marginRight">20dp</item>
+
+    <style name="button">
+        <item name="android:textSize">14dp</item>
     </style>
-    <style name="btnkho">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@drawable/selectbtnchon</item>
-       <item name="android:layout_weight">1</item>
-    </style>
-    <style name="list">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
-    </style>
-    <style name="btn_main">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">70dp</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:background">@drawable/selectbtnchon</item>
-    </style>
-    <style name="txtloaivai">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:gravity">center</item>
-    </style>
-    <style name="txtphieunhap">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_weight">1</item>
-    </style>
+
+
 </resources>
