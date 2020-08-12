@@ -1,0 +1,36 @@
+<resources>
+    <string name="tieude">Quản Lý Kho Vải</string>
+    <string name="add">Thêm</string>
+    <string name="del">Xóa</string>
+    <string name="change">Sửa</string>
+    <string name="app_name">Quản Lý Kho Vải</string>
+    <string name="loai_vai">Loại vải</string>
+    <string name="tong_kho">Tổng kho</string>
+    <string name="thong_tin_kho">Thông tin kho</string>
+    <string name="phieu_nhap">Phiếu nhập</string>
+    <string name="phieu_xuat">Phiếu xuất</string>
+    <string name="lang">Việt Nam</string>
+    <string name="mess_exit">Bạn có muốn thoát???</string>
+    <string name="yes">Có</string>
+    <string name="no">Không</string>
+    <string name="Makho">Mã kho</string>
+    <string name="TenKho">tên kho</string>
+    <string name="diachi">Địa chỉ</string>
+    <string name="error_null">Nhập lại!</string>
+    <string name="mavai">Mã vải</string>
+    <string name="tenvai">Tên vải</string>
+    <string name="xuatxu">Xuất xứ</string>
+    <string name="kho">Quản lý kho</string>
+    <string name="ngay">Ngày:</string>
+    <string name="soluong">Số lượng:</string>
+    <string name="qlnk">Quản lý nhập kho</string>
+    <string name="chitiet">Chi tiết</string>
+
+    <string name="sun">Sun</string>
+    <string name="grass">Grass</string>
+    <string name="sky">Sky</string>
+    <string name="clock">Clock</string>
+    <string name="hour">Hour Hand</string>
+    <string name="xuat_kho">Xuất Kho</string>
+    <string name="nhap_kho">Nhập kho</string>
+</resources>
