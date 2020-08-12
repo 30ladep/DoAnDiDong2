@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">倉庫管理</string>
+    <string name="change">修復</string>
+    <string name="del">消す</string>
+    <string name="add">追加</string>
+    <string name="tieude">倉庫管理</string>
+    <string name="phieu_xuat">納品書</string>
+    <string name="phieu_nhap">輸入クーポン</string>
+    <string name="thong_tin_kho">倉庫情報</string>
+    <string name="tong_kho">デポ</string>
+    <string name="loai_vai">種</string>
+    <string name="lang">日本</string>
+    <string name="mess_exit">終了しますか???</string>
+    <string name="yes">持ってる</string>
+    <string name="no">ほしくない</string>
+    <string name="Makho">デポコード</string>
+    <string name="TenKho">デポ名</string>
+    <string name="diachi">住所</string>
+    <string name="error_null">再入力 !</string>
+    <string name="mavai">生地のコードタイプ</string>
+    <string name="tenvai">生地の名前</string>
+    <string name="xuatxu">原点</string>
+    <string name="kho">デポを管理する</string>
+    <string name="ngay">日付</string>
+    <string name="soluong">幾つ</string>
+    <string name="qlnk">倉庫管理</string>
+    <string name="chitiet">細部</string>
+</resources>
